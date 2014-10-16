@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'socke.tio' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json fs@0.0.2 fs is also the name of a node core module.
+6 warn package.json fs@0.0.2 No description
+7 warn package.json fs@0.0.2 No repository field.
+8 warn package.json fs@0.0.2 No README data
+9 warn package.json http@0.0.0 http is also the name of a node core module.
+10 warn package.json http@0.0.0 No description
+11 warn package.json http@0.0.0 No repository field.
+12 warn package.json http@0.0.0 No README data
+13 warn package.json parseuri@0.0.4 No README data
+14 warn package.json path@0.4.9 path is also the name of a node core module.
+15 warn package.json path@0.4.9 No README data
+16 warn package.json parseqs@0.0.3 No README data
+17 verbose readDependencies using package.json deps
+18 verbose cache add [ 'socke.tio', null ]
+19 verbose cache add name=undefined spec="socke.tio" args=["socke.tio",null]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'socke.tio',
+20 verbose parsed url   path: 'socke.tio',
+20 verbose parsed url   href: 'socke.tio' }
+21 silly lockFile 07cf3d47-socke-tio socke.tio
+22 verbose lock socke.tio C:\Users\s-2508657\AppData\Roaming\npm-cache\07cf3d47-socke-tio.lock
+23 silly lockFile 07cf3d47-socke-tio socke.tio
+24 silly lockFile 07cf3d47-socke-tio socke.tio
+25 verbose addNamed [ 'socke.tio', '' ]
+26 verbose addNamed [ null, '*' ]
+27 silly lockFile ca49020c-socke-tio socke.tio@
+28 verbose lock socke.tio@ C:\Users\s-2508657\AppData\Roaming\npm-cache\ca49020c-socke-tio.lock
+29 silly addNameRange { name: 'socke.tio', range: '*', hasData: false }
+30 verbose request where is /socke.tio
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id d3300086926c4315
+33 verbose url raw /socke.tio
+34 verbose url resolving [ 'https://registry.npmjs.org/', './socke.tio' ]
+35 verbose url resolved https://registry.npmjs.org/socke.tio
+36 verbose request where is https://registry.npmjs.org/socke.tio
+37 info trying registry request attempt 1 at 15:44:34
+38 http GET https://registry.npmjs.org/socke.tio
+39 http 404 https://registry.npmjs.org/socke.tio
+40 verbose headers { date: 'Thu, 16 Oct 2014 22:44:34 GMT',
+40 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=0',
+40 verbose headers   'content-length': '52',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   age: '0',
+40 verbose headers   'x-served-by': 'cache-sjc3128-SJC',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1413499474.766289,VS0,VE89',
+40 verbose headers   'keep-alive': 'timeout=10, max=50',
+40 verbose headers   connection: 'Keep-Alive' }
+41 silly registry.get cb [ 404,
+41 silly registry.get   { date: 'Thu, 16 Oct 2014 22:44:34 GMT',
+41 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+41 silly registry.get     'content-type': 'application/json',
+41 silly registry.get     'cache-control': 'max-age=0',
+41 silly registry.get     'content-length': '52',
+41 silly registry.get     'accept-ranges': 'bytes',
+41 silly registry.get     via: '1.1 varnish',
+41 silly registry.get     age: '0',
+41 silly registry.get     'x-served-by': 'cache-sjc3128-SJC',
+41 silly registry.get     'x-cache': 'MISS',
+41 silly registry.get     'x-cache-hits': '0',
+41 silly registry.get     'x-timer': 'S1413499474.766289,VS0,VE89',
+41 silly registry.get     'keep-alive': 'timeout=10, max=50',
+41 silly registry.get     connection: 'Keep-Alive' } ]
+42 silly lockFile ca49020c-socke-tio socke.tio@
+43 silly lockFile ca49020c-socke-tio socke.tio@
+44 error 404 404 Not Found: socke.tio
+44 error 404
+44 error 404 'socke.tio' is not in the npm registry.
+44 error 404 You should bug the author to publish it
+44 error 404 It was specified as a dependency of 'node-js-getting-started'
+44 error 404
+44 error 404 Note that you can also install from a
+44 error 404 tarball, folder, or http url, or git url.
+45 error System Windows_NT 6.1.7601
+46 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "socke.tio"
+47 error cwd C:\Users\s-2508657\Desktop\Robotics Node
+48 error node -v v0.10.32
+49 error npm -v 1.4.28
+50 error code E404
+51 verbose exit [ 1, true ]

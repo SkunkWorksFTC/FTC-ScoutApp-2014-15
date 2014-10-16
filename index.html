@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> FTC ScoutApp 2014 </title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+    <script src="index.js"></script>
+</head>
+<body onLoad="load()">
+<h1 align="center">FTC ScoutAPP</h1>
+<h2 align="left">Tablet #
+
+<select id="selTab">
+    <option value=" "> </option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="4">5</option>
+    <option value="6">6</option>
+    <option value="T">T</option>
+</select></h2>
+
+<div id="match" align="right">
+    <h2 align="right">Match Info</h2>
+    <h3 align="right">Match
+    <select id="selMatch">
+        <option value="1">1</option>
+        <option value="2">1</option>
+    </select></h3>
+
+<br><br><br><br><br><br><br>
+<form action="game.html">
+    <button type="button" id="bottomRight" onClick="sendData()">Start Position</button>
+</form>
+</div>
+
+
+    
+</body>
+</html>
