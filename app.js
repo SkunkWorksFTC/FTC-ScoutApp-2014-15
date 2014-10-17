@@ -6,7 +6,7 @@ var fs = require('fs');
 var morgan = require('morgan');
 var path = require('path');
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
 console.log("required all modules");
 
 function handler (req, res) {
