@@ -43,7 +43,7 @@ function handler (req, res) {
 }
 console.log('Added file handler success!');
 
-var dbPath = "postgres://lupaaeajuixdbb:r4rJIiThqRc80KkX7E5FfX2j_r@ec2-107-20-245-187.compute-1.amazonaws.com:5432/ddfv555ovil63d";
+var dbPath = "pprocess.env.DATABASE_URL";
 var db = new pg.Client(dbPath);
 db.connect();
 
