@@ -17,6 +17,7 @@
     "parseqs": "0.0.3",
     "parseuri": "0.0.4",
     "path": "^0.4.9",
+    "pg": "^3.6.0",
     "socket.io": "^1.1.0",
     "sqlite3": "^3.0.2",
     "xmlhttprequest": "^1.6.0"

@@ -1,5 +1,5 @@
 console.log("Started program");
-var sqlite = require('sqlite3').verbose();
+var pg = require(pg);
 var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 var fs = require('fs');
@@ -7,7 +7,7 @@ var morgan = require('morgan');
 var path = require('path');
 
 app.listen(process.env.PORT || 5000);
-console.log("required all modules");
+console.log("Required all modules");
 
 function handler (req, res) {
   console.log("Starting request...");
@@ -41,26 +41,18 @@ function handler (req, res) {
       }
   });
 }
-console.log('Got this far');
+console.log('Added file handler success!');
 
+var dbPath = "postgres://lupaaeajuixdbb:r4rJIiThqRc80KkX7E5FfX2j_r@ec2-107-20-245-187.compute-1.amazonaws.com:5432/ddfv555ovil63d";
+var db = new pg.Client(dbPath);
+db.connect();
 
-file = 'db.sqlite';
-var db = new sqlite.Database(file);
-var dbexists = fs.existsSync(file);
-
-db.serialize(function() { 
-    if(!dbexists) {
-        db.run("CREATE TABLE scouting (tablet INTEGER, match INTEGER, team INTEGER, alliance1 INTEGER, alliance2 INTEGER, deadbot BOOL, noshow BOOL, fataljam BOOL, startingposition TEXT, autopoints INTEGER, autogoals INTEGER, automoved INTEGER, kickstand BOOL, teleballs INTEGER, telestyle TEXT, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endcenter INTEGER, endfinal INTEGER, results STRING)");
-    }
-});
+db.query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, match INTEGER, team INTEGER, alliance1 INTEGER, alliance2 INTEGER, deadbot BOOL, noshow BOOL, fataljam BOOL, startingposition TEXT, autopoints INTEGER, autogoals INTEGER, automoved INTEGER, kickstand BOOL, teleballs INTEGER, telestyle TEXT, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endcenter INTEGER, endfinal INTEGER, results STRING)");
 
 io.sockets.on('connection', function(socket) {
   socket.on('addEntry', function(data) {
     console.log("Database entry emit");
-    db.serialize(function() {
-        console.log(data.team);
-        db.run("INSERT INTO scouting VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [data.tablet, data.match, data.team, data.alliance1, data.alliance2, data.deadbot, data.noshow, data.fataljam, data.startingposition, data.autopoints, data.autogoals, data.automoved, data.kickstand, data.telestyle, data.teleshort, data.telemedium, data.telelarge, data.endcenter, data.endfinal, data.results]);
-    });
+    db.query("INSERT INTO scouting(tablet, match, team, alliance1, alliance2, deadbot, noshow, fataljam, startingposition, autopoints, autogoals, automoved, kickstand, telestyle, teleshort, telemedium, telelarge, endcenter, endfinal, results) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)", [data.tablet, data.match, data.team, data.alliance1, data.alliance2, data.deadbot, data.noshow, data.fataljam, data.startingposition, data.autopoints, data.autogoals, data.automoved, data.kickstand, data.telestyle, data.teleshort, data.telemedium, data.telelarge, data.endcenter, data.endfinal, data.results]);
   });
 })
 
