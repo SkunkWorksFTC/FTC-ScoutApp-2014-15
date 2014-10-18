@@ -1,0 +1,2 @@
+ !    The local psql command could not be located
+ !    For help installing psql, see https://devcenter.heroku.com/articles/heroku-postgresql#local-setup
