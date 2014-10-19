@@ -46,9 +46,11 @@ console.log('Added file handler success!');
 var dbPath = "process.env.DATABASE_URL";
 var db = new pg.Client(dbPath);
 db.connect();
+console.log("Initialized database connection");
 
 db.query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, match INTEGER, team INTEGER, alliance1 INTEGER, alliance2 INTEGER, deadbot BOOL, noshow BOOL, fataljam BOOL, startingposition TEXT, autopoints INTEGER, autogoals INTEGER, automoved INTEGER, kickstand BOOL, teleballs INTEGER, telestyle TEXT, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endcenter INTEGER, endfinal INTEGER, results STRING)");
-
+console.log("Finished query");
+db.on('end', function() { client.end() });
 io.sockets.on('connection', function(socket) {
   socket.on('addEntry', function(data) {
     console.log("Database entry emit");
