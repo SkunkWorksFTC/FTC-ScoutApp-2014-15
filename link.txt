@@ -1,3 +1,0 @@
-=== scout-ftc-web-app Config Vars
-DATABASE_URL:               postgres://lupaaeajuixdbb:r4rJIiThqRc80KkX7E5FfX2j_r@ec2-107-20-245-187.compute-1.amazonaws.com:5432/ddfv555ovil63d
-HEROKU_POSTGRESQL_NAVY_URL: postgres://lupaaeajuixdbb:r4rJIiThqRc80KkX7E5FfX2j_r@ec2-107-20-245-187.compute-1.amazonaws.com:5432/ddfv555ovil63d
