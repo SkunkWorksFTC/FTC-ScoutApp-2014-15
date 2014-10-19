@@ -50,7 +50,7 @@ console.log("Created new client connection");
 db.connect();
 console.log("Initialized database connection");
 
-db.query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, match INTEGER, team INTEGER, alliance1 INTEGER, alliance2 INTEGER, deadbot BOOL, noshow BOOL, fataljam BOOL, startingposition TEXT, autopoints INTEGER, autogoals INTEGER, automoved INTEGER, kickstand BOOL, teleballs INTEGER, telestyle TEXT, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endcenter INTEGER, endfinal INTEGER, results STRING)");
+db.query("CREATE TABLE IF NOT EXISTS scouting(tablet INTEGER, match INTEGER, team INTEGER, alliance1 INTEGER, alliance2 INTEGER, deadbot BOOL, noshow BOOL, fataljam BOOL, startingposition TEXT, autopoints INTEGER, autogoals INTEGER, automoved INTEGER, kickstand BOOL, teleballs INTEGER, telestyle TEXT, teleshort INTEGER, telemedium INTEGER, telelarge INTEGER, endcenter INTEGER, endfinal INTEGER, results TEXT)");
 console.log("Finished query");
 
 io.sockets.on('connection', function(socket) {
