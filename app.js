@@ -1,5 +1,5 @@
 console.log("Started program");
-var pg = require('pg').native;
+var pg = require('pg');
 var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 var fs = require('fs');
@@ -56,8 +56,12 @@ console.log("Finished query");
 io.sockets.on('connection', function(socket) {
   socket.on('addEntry', function(data) {
     console.log("Database entry emit");
-    db.query("INSERT INTO scouting(tablet, match, team, alliance1, alliance2, deadbot, noshow, fataljam, startingposition, autopoints, autogoals, automoved, kickstand, telestyle, teleshort, telemedium, telelarge, endcenter, endfinal, results) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)", [data.tablet, data.match, data.team, data.alliance1, data.alliance2, data.deadbot, data.noshow, data.fataljam, data.startingposition, data.autopoints, data.autogoals, data.automoved, data.kickstand, data.telestyle, data.teleshort, data.telemedium, data.telelarge, data.endcenter, data.endfinal, data.results]);
+    var query = db.query("INSERT INTO scouting(tablet, match, team, alliance1, alliance2, deadbot, noshow, fataljam, startingposition, autopoints, autogoals, automoved, kickstand, telestyle, teleshort, telemedium, telelarge, endcenter, endfinal, results) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)", [data.tablet, data.match, data.team, data.alliance1, data.alliance2, data.deadbot, data.noshow, data.fataljam, data.startingposition, data.autopoints, data.autogoals, data.automoved, data.kickstand, data.telestyle, data.teleshort, data.telemedium, data.telelarge, data.endcenter, data.endfinal, data.results]);
+    query.on("end", function(result) {
+        console.log(result);
+        client.end();
+    });
   });
-})
+});
 
     
