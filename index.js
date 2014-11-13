@@ -1,6 +1,4 @@
-var socket;
-
-socket = io.connect("//scout-ftc-web-app.heorkuapp.com:80");
+var socket = io.connect();
 
 function show(id) { //Makes sure the match selection isn't shown until they've selected a match
     document.getElementById(id).style.visibility= "visible"; //Shows entire div match

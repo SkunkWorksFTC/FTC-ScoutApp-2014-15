@@ -4,7 +4,7 @@
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1"
   },
   "dependencies": {
     "component-inherit": "0.0.3",
@@ -22,17 +22,5 @@
     "sqlite3": "^3.0.2",
     "xmlhttprequest": "^1.6.0"
   },
-  "engines": {
-    "node": "0.10.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+  "main": "app.js"
 }

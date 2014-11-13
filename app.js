@@ -1,12 +1,12 @@
 console.log("Started program");
 var pg = require('pg');
 var app = require('http').createServer(handler);
-var io = require('socket.io')(app);
+var io = require('socket.io').listen(app);
 var fs = require('fs');
 var morgan = require('morgan');
 var path = require('path');
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.OPENSHIFT_NODEJS_PORT || 5000, process.env.OPENSHIFT_NODEJS_IP);
 console.log("Required all modules");
 
 function handler (req, res) {
