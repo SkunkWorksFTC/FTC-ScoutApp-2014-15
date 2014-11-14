@@ -2,7 +2,6 @@
   "name": "node-js-getting-started",
   "version": "0.1.2",
   "description": "A sample Node.js app using Express 4",
-  "main": "index.js",
   "scripts": {
     "start": "node app.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1"
   },
